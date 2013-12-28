@@ -1,10 +1,7 @@
 Bustavote::Application.routes.draw do
-<<<<<<< HEAD
-=======
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"  
->>>>>>> 8d71f9753e931c4ca8b1bd4d898d618e4472bab0
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
