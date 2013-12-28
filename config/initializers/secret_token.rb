@@ -9,6 +9,7 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
+<<<<<<< HEAD
 require 'securerandom'
 
 def secure_token
@@ -25,3 +26,6 @@ def secure_token
 end
 
 Bustavote::Application.config.secret_key_base = secure_token
+=======
+Bustavote::Application.config.secret_key_base = 'fe7913c99457f533b4bb763458dec2d3dfddb2becb258325b5d38110963da41713957795c48d6e73f2a729961436aec1eb9f8686ca8c4f3e96b5f47597fd143f'
+>>>>>>> 8d71f9753e931c4ca8b1bd4d898d618e4472bab0
