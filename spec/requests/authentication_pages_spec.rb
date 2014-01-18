@@ -65,7 +65,7 @@ describe "Authentication" do
 
           describe "when signing in again" do
             before do
-              delete signout_path
+              Capybara.current_session.driver.delete signout_path
               visit signin_path
               fill_in "Email",    with: user.email
               fill_in "Password", with: user.password
@@ -76,6 +76,19 @@ describe "Authentication" do
               expect(page).to have_title(user.name)
             end
           end
+        end
+      end
+
+      describe "in the Questions controller" do
+
+        describe "submitting to the create action" do
+          before { post questions_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete question_path(FactoryGirl.create(:question)) }
+          specify { expect(response).to redirect_to(signin_path) }
         end
       end
 
