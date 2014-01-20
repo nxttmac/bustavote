@@ -17,7 +17,7 @@
       <% end %>
     <% else %>
       <!-- Form for if the user has voted for this choice -->
-      <img src="http://bustavote.com/img/buttons_check_on.png" style="float:left; margin:0 10px 0 0" />
+      <%= image_tag('buttons_check_on.png') %>
     <% end %>  
     <span class = "choice_content"><%= choice.content %></span>
     <span class = "vote_count" style="float:right; position:relative; top:13px;"><%= choice.votes.count %> votes</span>
