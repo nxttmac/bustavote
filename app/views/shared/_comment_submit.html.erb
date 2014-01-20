@@ -1,3 +1,6 @@
+<% if @comment.nil?
+	@comment = Comment.new
+	end %>
 <%= form_for @comment, remote: true do |f| %>
     <%= f.hidden_field :question_id, :value => @question_id %>
     <%= f.text_field :content, placeholder: "Add a comment..." %>

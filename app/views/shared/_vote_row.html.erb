@@ -1,6 +1,9 @@
 <li style="clear:both; padding: 5px 0">
   <div>
     <% if choice.id != @current_choice %>
+      <% if @vote.nil? 
+        @vote = Vote.new 
+        end %>
       <% if !@vote_id.nil? %>
         <!-- Form for if the user has already voted on this question -->
         <%= form_for @vote, url: vote_path(id: @vote_id), html: { :method => :put }, remote: true do |f| %>

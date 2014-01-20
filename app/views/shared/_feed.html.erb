@@ -1,3 +1,4 @@
+<% debug @feed_items %>
 <% if @feed_items.any? %>
   <ol class="questions">
     <%= render partial: 'shared/feed_item', collection: @feed_items %>
