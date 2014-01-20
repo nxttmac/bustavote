@@ -12,7 +12,22 @@
       </section>
     </aside>
     <div class="span8">
-      <h3>Questions Feed</h3>
+      <ul id="feed_togle" class="nav nav-pills">
+      
+        <% if @feed_togle != "following" %>
+          <li class="active"><%= link_to "Public feed", root_path %></li>
+        <% else %>
+          <li><%= link_to "Public feed", root_path %></li>
+        <% end %>
+        
+        <% if @feed_togle == "following" %>
+          <li class="active"><%= link_to "Following", following_path %></li>
+        <% else %>
+          <li><%= link_to "Following", following_path %></li>
+        <% end %>
+      
+      </ul>
+      <h3 id = "question_header">Questions Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>

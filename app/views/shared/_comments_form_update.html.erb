@@ -1,0 +1,6 @@
+<% @question_id = @comment.question_id %>
+<% for comment in @comment.question.comments %>
+  <%= render "shared/comment_row", comment: comment %>
+<% end %>
+<% @comment = Comment.new %>
+<%= render "shared/comment_submit", comment: @comment %>

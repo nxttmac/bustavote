@@ -1,0 +1,22 @@
+<div class="span8">
+<h1>Ask!</h1>
+<%= form_for @question do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <h3>Questions</h3>
+    <%= f.text_field :content, placeholder: "What do you want to ask?" %>
+  </div>
+  <div class="field">
+  	<h3>Choices</h3>
+  	<%= f.fields_for :choices do |builder| %>
+      <%= render 'shared/choice_fields', :f => builder %>
+    <% end %>
+    <div>
+      <%= link_to_add_fields "Add Choice", f, :choices %>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+<div style="clear:both"></div>

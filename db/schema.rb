@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140118202547) do
+ActiveRecord::Schema.define(version: 20140119064505) do
+
+  create_table "choices", force: true do |t|
+    t.string   "content"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "choices", ["question_id"], name: "index_choices_on_question_id"
+
+  create_table "comments", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["question_id", "user_id"], name: "index_comments_on_question_id_and_user_id"
 
   create_table "questions", force: true do |t|
     t.string   "content"
@@ -45,5 +64,15 @@ ActiveRecord::Schema.define(version: 20140118202547) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "votes", force: true do |t|
+    t.integer  "choice_id"
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["question_id", "choice_id", "user_id"], name: "index_votes_on_question_id_and_choice_id_and_user_id"
 
 end

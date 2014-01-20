@@ -117,6 +117,18 @@ footer {
   @include box_sizing;
 }
 
+#question_header {
+  width:250px;
+}
+
+#feed_togle {
+  float:right;
+  margin-top: 5px;
+}
+
+#feed_togle li {
+  display: inline;
+}
 
 /* sidebar */
 
@@ -201,6 +213,47 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+.add_fields {
+  float:right
+}
+
+.new_vote, .edit_vote {
+  float:left;
+  margin:0 10px 0 0;
+}
+
+.choice_content {
+  position:relative;
+  top:13px;
+}
+
+input.vote_box {
+  background: url("http://bustavote.com/img/buttons_check_off.png");
+  height: 45px !important;
+  width: 45px !important;
+  margin:0;
+  border:none;
+}
+
+.comments {
+  border-top:1px solid #E8E8E8;
+  padding-top:20px;
+  margin-left:60px;
+}
+
+.comment_item {
+  margin:0 0 20px 10px;
+}
+
+input.comment_submit {
+
+}
+
+.comments input#comment_content {
+  width:460px;
+  margin:0px 0 0 10px;
 }
 
 /* Users index */

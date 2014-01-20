@@ -1,0 +1,17 @@
+<ul style="list-style-type:none; margin-left:60px;">
+  <% @question_id = @vote.question.id %>
+  <% @vote_id = nil %>
+  <% @current_choice = nil %>
+  <% @user_id = current_user.id %>
+  <% for vote in @vote.question.votes %>
+    <%if (!vote.id.nil? && (vote.user.id == @user_id)) %>
+      <% @vote_id = vote.id %>
+      <% @current_choice = vote.choice_id %>
+    <% end %>
+  <% end %>
+  <% for choice in @vote.question.choices %>
+    <!-- render each choice row -->
+    <% @choice_id = choice.id %>
+    <%= render "shared/vote_row", choice: choice %>
+  <% end %>
+</ul>

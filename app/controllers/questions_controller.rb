@@ -18,10 +18,15 @@ class QuestionsController < ApplicationController
     redirect_to root_url
   end
 
+  def ask
+    @question = Question.new
+    2.times { @question.choices.build }
+  end
+
   private
 
     def question_params
-      params.require(:question).permit(:content)
+      params.require(:question).permit(:content, choices_attributes: [:content] )
     end
 
     def correct_user

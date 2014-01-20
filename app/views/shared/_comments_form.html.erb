@@ -1,0 +1,4 @@
+<% for comment in feed_item.comments %>
+  <%= render "shared/comment_row", comment: comment %>
+<% end %>
+<%= render "shared/comment_submit", comment: comment %>
