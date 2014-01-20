@@ -229,6 +229,11 @@ input {
   top:13px;
 }
 
+.check_button {
+  float:left;
+  margin-right: 10px;
+}
+
 input.vote_box {
   background: image-url("buttons_check_off.png");
   height: 45px !important;
